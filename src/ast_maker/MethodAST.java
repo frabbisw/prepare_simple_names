@@ -2,11 +2,7 @@ package ast_maker;
 
 import java.util.ArrayList;
 
-import org.eclipse.jdt.core.dom.AST;
-import org.eclipse.jdt.core.dom.ASTParser;
-import org.eclipse.jdt.core.dom.ASTVisitor;
-import org.eclipse.jdt.core.dom.CompilationUnit;
-import org.eclipse.jdt.core.dom.MethodDeclaration;
+import org.eclipse.jdt.core.dom.*;
 
 public class MethodAST {
 	ArrayList<String>asts;
@@ -44,7 +40,7 @@ public class MethodAST {
 		parser.setKind(ASTParser.K_COMPILATION_UNIT);
 
 		MyASTVisitor visitor = new MyASTVisitor();
-		
+
 		final CompilationUnit cu = (CompilationUnit) parser.createAST(null);
 				
 		cu.accept(new ASTVisitor() {

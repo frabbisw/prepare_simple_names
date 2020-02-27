@@ -67,7 +67,7 @@ public class LoadJson {
 		System.out.println("preparing whole json");
 		for(int i=0; i<asts.size(); i++){
 			JSONObject jsonObject = jsonList.get(i);
-			jsonObject.put("ast", asts.get(i));
+			jsonObject.put("simple", asts.get(i));
 			//wholeJson+=(jsonObject.toString()+"\n");
 			
 			if(i%(int)(1.0+(double)asts.size()/10.0)==0) {

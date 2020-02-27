@@ -16,7 +16,7 @@ public class FileProcessor {
 		methodAST.prepareASTs(loadJson.getMethods());
 		loadJson.addAST(methodAST.getASTList());
 		
-		loadJson.saveJson(dir+"/"+"out_"+filename);
+		loadJson.saveJson(dir+"/"+"simple_"+filename);
 		
 		System.out.println(filename+" ... done!!");
 	}

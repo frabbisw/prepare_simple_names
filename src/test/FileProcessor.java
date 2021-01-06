@@ -2,6 +2,7 @@ package test;
 
 import ast_maker.MethodAST;
 import file_hadling.LoadJson;
+import file_hadling.LoadJsonArray;
 
 public class FileProcessor {
 	String dir="";
@@ -10,13 +11,13 @@ public class FileProcessor {
 		this.dir=dir;
 	}
 	public void loadAndSave(String filename) {
-		LoadJson loadJson = new LoadJson(dir+"/"+filename);
+		LoadJsonArray loadJson = new LoadJsonArray(dir+filename);
 		
 		MethodAST methodAST = new MethodAST();
 		methodAST.prepareASTs(loadJson.getMethods());
 		loadJson.addAST(methodAST.getASTList());
-		
-		loadJson.saveJson(dir+"/"+"simple_"+filename);
+
+		loadJson.saveJson(dir+"simple_"+filename);
 		
 		System.out.println(filename+" ... done!!");
 	}
